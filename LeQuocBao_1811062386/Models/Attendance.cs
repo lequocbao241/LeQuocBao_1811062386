@@ -9,7 +9,6 @@ namespace LeQuocBao_1811062386.Models
 {
     public class Attendance
     {
-
         public Course Course { get; set; }
 
         [Key]

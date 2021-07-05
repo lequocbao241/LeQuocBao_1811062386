@@ -10,7 +10,7 @@ using LeQuocBao_1811062386.Models;
 
 namespace LeQuocBao_1811062386.Controllers
 {
-    [Authorize]
+    [[Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -32,9 +32,9 @@ namespace LeQuocBao_1811062386.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -333,7 +333,7 @@ namespace LeQuocBao_1811062386.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +384,6 @@ namespace LeQuocBao_1811062386.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

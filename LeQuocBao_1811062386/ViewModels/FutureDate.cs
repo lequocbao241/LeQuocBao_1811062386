@@ -8,17 +8,17 @@ using System.Web;
 namespace LeQuocBao_1811062386.ViewModels
 {
     public class FutureDate : ValidationAttribute
-
     {
         public override bool IsValid(object value)
         {
             DateTime dateTime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "dd/M/yyyy",
+                "dd/MM/yyyy",
                 CultureInfo.CurrentCulture,
-                DateTimeStyles.None,
+                DateTimeStyles.AssumeLocal,
                 out dateTime);
-                return (isValid && dateTime > DateTime.Now);
+
+            return (isValid && dateTime > DateTime.Now);
         }
     }
 }
