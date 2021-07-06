@@ -9,9 +9,6 @@ using System.Web.Routing;
 
 
 
-
-
-
 namespace LeQuocBao_1811062386
 {
     public class MvcApplication : System.Web.HttpApplication
