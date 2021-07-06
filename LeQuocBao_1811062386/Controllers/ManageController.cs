@@ -10,7 +10,7 @@ using LeQuocBao_1811062386.Models;
 
 namespace LeQuocBao_1811062386.Controllers
 {
-    [[Authorize]
+    [Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

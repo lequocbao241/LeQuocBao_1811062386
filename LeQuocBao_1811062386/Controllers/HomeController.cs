@@ -25,7 +25,7 @@ namespace LeQuocBao_1811062386.Controllers
                                        .Include(c => c.Lecturer)
                                        .Include(c => c.Category)
                                        .Where(a => a.IsCanceled == false)
-                                       .Where(c => c.DateTime > DateTime.Now);
+                                       .Where(c => c.DataTime > DateTime.Now);
 
             var userId = User.Identity.GetUserId();
 

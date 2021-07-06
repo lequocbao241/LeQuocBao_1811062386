@@ -153,7 +153,7 @@ namespace LeQuocBao_1811062386.Controllers
             var course = _dbContext.Courses.Single(c => c.Id == courseView.Id && c.LecturerId == userId);
 
             course.Place = courseView.Place;
-            course.da = courseView.GetDateTime();
+            course.DataTime = courseView.GetDateTime();
             course.CategoryId = courseView.Category;
 
             _dbContext.SaveChanges();
