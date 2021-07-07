@@ -4,14 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Mine</h2>
-
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-
 
 <h2>Mine</h2>
 <ul class="course">
-
     @foreach (var course in Model)
     {
         <li>
@@ -42,14 +38,14 @@
 
 
         </li>
-}
+    }
 
 
 </ul>
 
 @section scripts{
     <script>
-    $(function () {
+        $(function () {
             $(".js-cancel-course").click(function (e) {
                 e.preventDefault();
                 var link = $(e.target);
@@ -66,7 +62,8 @@
                     });
                 });
             });
-        })</script>
+        })
+    </script>
 }
 
 

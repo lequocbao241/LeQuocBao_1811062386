@@ -9,7 +9,7 @@ namespace LeQuocBao_1811062386.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(LeQuocBao_1811062386.Models.ApplicationDbContext context)
