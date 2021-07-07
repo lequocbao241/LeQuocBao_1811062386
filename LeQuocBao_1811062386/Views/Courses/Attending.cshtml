@@ -3,7 +3,9 @@
     ViewBag.Title = "Attending";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h2>Attending</h2>
+
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <div class="row">
     <ul class="course">
@@ -12,10 +14,10 @@
             <li>
                 <div class="date">
                     <div class="month">
-                        @course.DateTime.ToString("MM")
+                        @course.DataTime.ToString("MM")
                     </div>
                     <div class="day">
-                        @course.DateTime.ToString("dd")
+                        @course.DataTime.ToString("dd")
 
                     </div>
 
@@ -51,30 +53,27 @@
     @section scripts{
 
         <script>
-            const { target } = require("modernizr");
+const { target } = require("modernizr");
 
 
-            $(".js-toggle-follow").click(function (e) {
+                $(".js-toggle-follow").click(function (e) {
 
-                var button = $(target);
-                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
-                    .done(function () {
+                    var button = $(target);
+                    $.post("/api/followings", { followeeId: button.attr("data-user-id") })
+                        .done(function () {
 
-                        button.text("Following");
-                    })
-                    .fail(function () {
+                            button.text("Following");
+                        })
+                        .fail(function () {
 
-                        alert("Something failed");
+                            alert("Something failed");
 
-                    });
+                        });
+
+                });
 
             });
 
-                    });
-
-
-
         </script>
-
     }
 </div>

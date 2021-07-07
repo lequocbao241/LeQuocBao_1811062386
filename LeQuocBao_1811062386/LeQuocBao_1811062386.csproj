@@ -306,14 +306,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
-    <Content Include="Views\Courses\Attending.cshtml" />
     <Content Include="Views\Courses\Mine.cshtml" />
+    <Content Include="Views\Lecture\Follow.cshtml" />
+    <Content Include="Views\Courses\Attending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Attendances\" />
     <Folder Include="Views\Following\" />
-    <Folder Include="Views\Lecture\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106300724217_InitialModel.resx">
