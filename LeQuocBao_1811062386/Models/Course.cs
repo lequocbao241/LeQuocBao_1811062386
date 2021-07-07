@@ -8,7 +8,6 @@ using System.Web;
 namespace LeQuocBao_1811062386.Models
 {
     public class Course
-
     {
         public int Id { get; set; }
 
@@ -24,5 +23,4 @@ namespace LeQuocBao_1811062386.Models
         [Required]
         public byte CategoryId { get; set; }
     }
-   
 }

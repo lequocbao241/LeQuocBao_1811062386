@@ -6,7 +6,6 @@ using System.Web;
 
 namespace LeQuocBao_1811062386.Models
 {
-
      public class Category
     {
         public byte Id { get; set; }
