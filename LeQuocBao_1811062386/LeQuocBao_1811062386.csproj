@@ -186,49 +186,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106300724217_InitialModel.cs" />
-    <Compile Include="Migrations\202106300724217_InitialModel.Designer.cs">
-      <DependentUpon>202106300724217_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202107141030459_Database.cs" />
+    <Compile Include="Migrations\202107141030459_Database.Designer.cs">
+      <DependentUpon>202107141030459_Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106300750410_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202106300750410_CreateTableCourse.Designer.cs">
-      <DependentUpon>202106300750410_CreateTableCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202107141036385_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202107141036385_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202107141036385_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106300754193_CreateTableCourse1.cs" />
-    <Compile Include="Migrations\202106300754193_CreateTableCourse1.Designer.cs">
-      <DependentUpon>202106300754193_CreateTableCourse1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106300756407_PopulateCategoryTable.cs" />
-    <Compile Include="Migrations\202106300756407_PopulateCategoryTable.Designer.cs">
-      <DependentUpon>202106300756407_PopulateCategoryTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107050102019_AddNameColumnToApplicationUser.cs" />
-    <Compile Include="Migrations\202107050102019_AddNameColumnToApplicationUser.Designer.cs">
-      <DependentUpon>202107050102019_AddNameColumnToApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107050222020_Attendance.cs" />
-    <Compile Include="Migrations\202107050222020_Attendance.Designer.cs">
-      <DependentUpon>202107050222020_Attendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061307091_AddNameColumnToApplication.cs" />
-    <Compile Include="Migrations\202107061307091_AddNameColumnToApplication.Designer.cs">
-      <DependentUpon>202107061307091_AddNameColumnToApplication.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061554522_UpdateColumn.cs" />
-    <Compile Include="Migrations\202107061554522_UpdateColumn.Designer.cs">
-      <DependentUpon>202107061554522_UpdateColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061556086_FixFollowerId.cs" />
-    <Compile Include="Migrations\202107061556086_FixFollowerId.Designer.cs">
-      <DependentUpon>202107061556086_FixFollowerId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061556470_FixCanceled.cs" />
-    <Compile Include="Migrations\202107061556470_FixCanceled.Designer.cs">
-      <DependentUpon>202107061556470_FixCanceled.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107140041021_AddIsCanceledColumnToCourse.cs" />
-    <Compile Include="Migrations\202107140041021_AddIsCanceledColumnToCourse.Designer.cs">
-      <DependentUpon>202107140041021_AddIsCanceledColumnToCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202107141044454_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202107141044454_CreateTableCourse.Designer.cs">
+      <DependentUpon>202107141044454_CreateTableCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -320,44 +288,20 @@
     <Folder Include="Views\Following\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106300724217_InitialModel.resx">
-      <DependentUpon>202106300724217_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300750410_CreateTableCourse.resx">
-      <DependentUpon>202106300750410_CreateTableCourse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300754193_CreateTableCourse1.resx">
-      <DependentUpon>202106300754193_CreateTableCourse1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300756407_PopulateCategoryTable.resx">
-      <DependentUpon>202106300756407_PopulateCategoryTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107050102019_AddNameColumnToApplicationUser.resx">
-      <DependentUpon>202107050102019_AddNameColumnToApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107050222020_Attendance.resx">
-      <DependentUpon>202107050222020_Attendance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061307091_AddNameColumnToApplication.resx">
-      <DependentUpon>202107061307091_AddNameColumnToApplication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061554522_UpdateColumn.resx">
-      <DependentUpon>202107061554522_UpdateColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061556086_FixFollowerId.resx">
-      <DependentUpon>202107061556086_FixFollowerId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061556470_FixCanceled.resx">
-      <DependentUpon>202107061556470_FixCanceled.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107140041021_AddIsCanceledColumnToCourse.resx">
-      <DependentUpon>202107140041021_AddIsCanceledColumnToCourse.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107141030459_Database.resx">
+      <DependentUpon>202107141030459_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107141036385_PopulateCategoryTable.resx">
+      <DependentUpon>202107141036385_PopulateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107141044454_CreateTableCourse.resx">
+      <DependentUpon>202107141044454_CreateTableCourse.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

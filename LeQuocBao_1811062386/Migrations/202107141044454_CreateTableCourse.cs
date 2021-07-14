@@ -31,9 +31,8 @@ namespace LeQuocBao_1811062386.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.LecturerId, cascadeDelete: true)
                 .Index(t => t.LecturerId)
                 .Index(t => t.CategoryId);
-
         }
-
+        
         public override void Down()
         {
             DropForeignKey("dbo.Courses", "LecturerId", "dbo.AspNetUsers");

@@ -17,7 +17,7 @@ namespace LeQuocBao_1811062386.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+     
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
@@ -44,6 +44,8 @@ namespace LeQuocBao_1811062386.Models
                 .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
+
+
 
 
         }

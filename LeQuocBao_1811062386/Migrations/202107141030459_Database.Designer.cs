@@ -7,13 +7,13 @@ namespace LeQuocBao_1811062386.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Attendance : IMigrationMetadata
+    public sealed partial class Database : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Attendance));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Database));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107050222020_Attendance"; }
+            get { return "202107141030459_Database"; }
         }
         
         string IMigrationMetadata.Source

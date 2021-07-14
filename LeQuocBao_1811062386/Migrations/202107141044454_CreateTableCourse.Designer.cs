@@ -7,13 +7,13 @@ namespace LeQuocBao_1811062386.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class FixFollowerId : IMigrationMetadata
+    public sealed partial class CreateTableCourse : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FixFollowerId));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateTableCourse));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107061556086_FixFollowerId"; }
+            get { return "202107141044454_CreateTableCourse"; }
         }
         
         string IMigrationMetadata.Source
