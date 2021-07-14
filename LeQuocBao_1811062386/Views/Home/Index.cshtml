@@ -67,20 +67,36 @@
                     $(document).ready(function () {
                         $(".js-toggle-attendance").click(function (e) {
                             var button = $(e.target);
-                            $.post("/api/Attendances", { courseId: button.attr("data-course-id") })
-                                .done(function () {
-                                    button
-                                        .removeClass(" btn-default")
-                                        .addClass("btn-info")
-                                        .text("Going");
+                            if (button.hasClass("btn-default")) {
+                                $.post("/api/Attendances", { courseId: button.attr("data-course-id") })
+                                    .done(function () {
+                                        button
+                                            .removeClass(" btn-default")
+                                            .addClass("btn-info")
+                                            .text("Going");
 
 
+                                    })
+                                    .fail(function () {
+
+                                        alert("Something failed");
+
+                                    });
+                            } else {
+                                $.ajax({
+                                    url: "/Api/Attendences" + button.attr("data-course-id"),
+                                    method: "DELETE"
                                 })
-                                .fail(function () {
-
-                                    alert("Something failed");
-
-                                });
+                                done(function ()){
+                                    button
+                                        .removeClass("btn-info")
+                                        .addClass("btn-dèault")
+                                        .text("going");
+                                })
+                            .fail(function () {
+                                alert("something failed");
+                            });
+                            }
 
                         });
                         $(".js-toggle-follow").click(function (e) {
