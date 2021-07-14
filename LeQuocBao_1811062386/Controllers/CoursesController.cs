@@ -48,7 +48,7 @@ namespace LeQuocBao_1811062386.Controllers
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
-                DataTime = viewModel.GetDateTime(),
+                DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
             };
@@ -74,12 +74,13 @@ namespace LeQuocBao_1811062386.Controllers
             var viewModel = new CoursesViewModel
             {
                 UpcommingCourses = courses,
-                ShowAction = User.Identity.IsAuthenticated
+                ShowAction = User.Identity.IsAuthenticated,
+
             };
 
             return View(viewModel);
 
-
+            //aaaaaaaaaaaaaaaaa
 
         }
 
@@ -108,7 +109,7 @@ namespace LeQuocBao_1811062386.Controllers
             var b = _dbContext.Courses
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
-                .Where(c => c.DataTime > DateTime.Now && c.LecturerId == userId).ToList();
+                .Where(c => c.DateTime > DateTime.Now && c.LecturerId == userId).ToList();
 
 
             return View(b);
@@ -124,8 +125,8 @@ namespace LeQuocBao_1811062386.Controllers
             var viewModel = new CourseViewModel
             {
                 Categories = _dbContext.Categories.ToList(),
-                Date = course.DataTime.ToString("dd/MM/yyyy"),
-                Time = course.DataTime.ToString("HH:mm"),
+                Date = course.DateTime.ToString("dd/MM/yyyy"),
+                Time = course.DateTime.ToString("HH:mm"),
                 Place = course.Place,
                 Head = "Edit Course",
                 Id = course.Id
@@ -153,7 +154,7 @@ namespace LeQuocBao_1811062386.Controllers
             var course = _dbContext.Courses.Single(c => c.Id == courseView.Id && c.LecturerId == userId);
 
             course.Place = courseView.Place;
-            course.DataTime = courseView.GetDateTime();
+            course.DateTime = courseView.GetDateTime();
             course.CategoryId = courseView.Category;
 
             _dbContext.SaveChanges();
