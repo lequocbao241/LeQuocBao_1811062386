@@ -68,7 +68,23 @@ namespace LeQuocBao_1811062386.Controllers.Api
                 return Ok();
 
             }
-       
+        [HttpDelete]
+        public IHttpActionResult DeleteAttendances(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var attendance = _dbContext.Attendances
+                .SingleOrDefault(a => a.AttendeeId == userId && a.CourseId == id);
+            if (attendance == null)
+                return NotFound();
+            _dbContext.Attendances.Add(attendance);
+            _dbContext.SaveChanges();
+
+            return Ok(id);
+
+        }
+
+
+
 
     }
 
