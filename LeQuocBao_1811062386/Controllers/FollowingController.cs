@@ -23,7 +23,7 @@ namespace LeQuocBao_1811062386.Controllers
         public IHttpActionResult Follow(FollowingDTO followingDTO)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Followings.Any(f => f.FolloweeId == userId && f.FolloweeId == followingDTO.FolloweeId))
+            if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == followingDTO.FolloweeId))
                 return BadRequest("Following already exists!");
 
             var following = new Following
@@ -34,7 +34,6 @@ namespace LeQuocBao_1811062386.Controllers
 
             _dbContext.Followings.Add(following);
             _dbContext.SaveChanges();
-
             return Ok();
 
         }

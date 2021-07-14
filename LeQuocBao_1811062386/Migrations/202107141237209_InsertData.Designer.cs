@@ -7,13 +7,13 @@ namespace LeQuocBao_1811062386.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateTableCourse : IMigrationMetadata
+    public sealed partial class InsertData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateTableCourse));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InsertData));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107141044454_CreateTableCourse"; }
+            get { return "202107141237209_InsertData"; }
         }
         
         string IMigrationMetadata.Source

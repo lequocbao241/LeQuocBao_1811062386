@@ -13,7 +13,7 @@ namespace LeQuocBao_1811062386.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202107141030459_Database"; }
+            get { return "202107141235533_Database"; }
         }
         
         string IMigrationMetadata.Source

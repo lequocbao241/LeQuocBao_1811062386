@@ -24,8 +24,9 @@ namespace LeQuocBao_1811062386.Controllers
             var upcommingCourses = _dbContext.Courses
                                        .Include(c => c.Lecturer)
                                        .Include(c => c.Category)
-                                       .Where(a => a.IsCanceled == false)
-                                       .Where(c => c.DataTime > DateTime.Now);
+                                       .Where(c => c.DataTime > DateTime.Now && c.IsCanceled == false);
+
+
 
             var userId = User.Identity.GetUserId();
 
@@ -33,8 +34,8 @@ namespace LeQuocBao_1811062386.Controllers
             {
                 UpcommingCourses = upcommingCourses,
                 ShowAction = User.Identity.IsAuthenticated,
-                Followings = _dbContext.Followings.Where(f => userId != null && f.FolloweeId == userId).ToList(),
-                Attendances = _dbContext.Attendances.Include(a => a.Course).ToList()
+                Followings = _dbContext.Followings.Where(f => userId != null && f.FollowerId == userId).ToList(),
+                Attendances = _dbContext.Attendances.Include(a => a.Course).Where(a => userId != null && a.AttendeeId == userId).ToList()
 
             };
 
@@ -43,6 +44,7 @@ namespace LeQuocBao_1811062386.Controllers
 
 
         }
+
 
         public ActionResult About()
         {

@@ -49,25 +49,24 @@ namespace LeQuocBao_1811062386.Controllers.Api
             [HttpPost]
             public IHttpActionResult Attend(AttendanceDTO attendanceDTO)
             {
-                var userId = User.Identity.GetUserId();
-                if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDTO.courseId))
-                {
-                    return BadRequest("The Attendance already exits");
-                }
-                var attendance = new Attendance
-                {
-                    CourseId = attendanceDTO.courseId,
-                    AttendeeId = userId
-
-
-                };
-
-                _dbContext.Attendances.Add(attendance);
-                _dbContext.SaveChanges();
-
-                return Ok();
-
+            var userId = User.Identity.GetUserId();
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDTO.courseId))
+            {
+                return BadRequest("The Attendance already exits");
             }
+            var attendance = new Attendance
+            {
+                CourseId = attendanceDTO.courseId,
+                AttendeeId = userId
+
+
+            };
+
+            _dbContext.Attendances.Add(attendance);
+            _dbContext.SaveChanges();
+
+            return Ok();
+        }
         [HttpDelete]
         public IHttpActionResult DeleteAttendances(int id)
         {

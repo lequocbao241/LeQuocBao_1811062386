@@ -21,30 +21,30 @@ namespace LeQuocBao_1811062386.Controllers
             }
 
 
-            [Authorize]
-            public ActionResult Follow()
+        [Authorize]
+        public ActionResult Follow()
+        {
+            var userId = User.Identity.GetUserId();
+
+
+            var courses = _dbContext.Attendances
+                .Where(a => a.AttendeeId == userId)
+                .Select(a => a.Course)
+                .Include(l => l.Lecturer)
+                .Include(c => c.Category)
+                .ToList();
+
+            var viewModel = new CoursesViewModel
             {
-                var userId = User.Identity.GetUserId();
+                UpcommingCourses = courses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
 
-
-                var courses = _dbContext.Attendances
-                    .Where(a => a.AttendeeId == userId)
-                    .Select(a => a.Course)
-                    .Include(l => l.Lecturer)
-                    .Include(c => c.Category)
-                    .ToList();
-
-                var viewModel = new CoursesViewModel
-                {
-                    UpcommingCourses = courses,
-                    ShowAction = User.Identity.IsAuthenticated
-                };
-
-                return View(viewModel);
+            return View(viewModel);
 
 
 
-            }
         }
+    }
     
 }

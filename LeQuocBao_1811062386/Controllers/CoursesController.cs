@@ -74,12 +74,13 @@ namespace LeQuocBao_1811062386.Controllers
             var viewModel = new CoursesViewModel
             {
                 UpcommingCourses = courses,
-                ShowAction = User.Identity.IsAuthenticated
+                ShowAction = User.Identity.IsAuthenticated,
+
             };
 
             return View(viewModel);
 
-
+            //aaaaaaaaaaaaaaaaa
 
         }
 
@@ -108,13 +109,14 @@ namespace LeQuocBao_1811062386.Controllers
             var b = _dbContext.Courses
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
-                .Where(c => c.DataTime > DateTime.Now && c.LecturerId == userId).ToList();
+                .Where(c => c.DataTime > DateTime.Now && c.LecturerId == userId && c.IsCanceled == false).ToList();
 
 
             return View(b);
 
 
         }
+
         [Authorize]
         public ActionResult Edit(int id)
         {

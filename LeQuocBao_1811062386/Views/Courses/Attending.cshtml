@@ -3,9 +3,7 @@
     ViewBag.Title = "Attending";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Attending</h2>
-
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 <div class="row">
     <ul class="course">
@@ -25,14 +23,14 @@
                 <div class="detail">
                     <span class="lecture">
                         @course.Lecturer.Name
-                        @if (course.IsCanceled)
+                        @if (course.IsCanceled == true)
                         {
                             <span class="label label-warning">Canceled</span>
                         }
 
                         @if (Model.ShowAction && !course.IsCanceled)
                         {
-                            <button class="btn btn-link btn-sm js-toggle-follow" data--user-id="@course.LecturerId">Follow</button>
+                            <button class="btn btn-link btn-sm js-toggle-follow" data--user-id="@course.Lecturer.Id">Follow</button>
                         }
 
 
@@ -53,27 +51,30 @@
     @section scripts{
 
         <script>
-const { target } = require("modernizr");
+            const { target } = require("modernizr");
 
 
-                $(".js-toggle-follow").click(function (e) {
+            $(".js-toggle-follow").click(function (e) {
 
-                    var button = $(target);
-                    $.post("/api/followings", { followeeId: button.attr("data-user-id") })
-                        .done(function () {
+                var button = $(target);
+                $.post("/api/Followings", { followeeId: button.attr("data-user-id") })
+                    .done(function () {
 
-                            button.text("Following");
-                        })
-                        .fail(function () {
+                        button.text("Following");
+                    })
+                    .fail(function () {
 
-                            alert("Something failed");
+                        alert("Something failed");
 
-                        });
-
-                });
+                    });
 
             });
 
+                    });
+
+
+
         </script>
+
     }
 </div>
