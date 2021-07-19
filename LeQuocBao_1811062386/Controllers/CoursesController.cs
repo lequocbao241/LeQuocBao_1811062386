@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,9 +20,23 @@ namespace LeQuocBao_1811062386.Controllers
             _dbContext = new ApplicationDbContext();
         }
         // GET: Courses
+
+        public async Task<ActionResult> Index(string SearchString)
+        {
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                return View(await _dbContext.Categories.Where(m=>m.Name.Contains(SearchString)).ToListAsync());
+
+            }
+            else
+            {
+                return View(await _dbContext.Categories.ToListAsync());
+            }
+        }
         [Authorize]
         public ActionResult Create()
         {
+           
             var viewModel = new CourseViewModel
             {
                 Categories = _dbContext.Categories.ToList(),
@@ -33,6 +48,8 @@ namespace LeQuocBao_1811062386.Controllers
 
 
         }
+
+        
 
         [Authorize]
         [HttpPost]
@@ -162,7 +179,9 @@ namespace LeQuocBao_1811062386.Controllers
 
             return RedirectToAction("Index", "Home");
 
-
+         
         }
+       
+
     }
 }
