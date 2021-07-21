@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity;
 using LeQuocBao_1811062386.ViewModels;
+using System.Threading.Tasks;
 
 namespace LeQuocBao_1811062386.Controllers
 {
@@ -18,6 +19,7 @@ namespace LeQuocBao_1811062386.Controllers
             _dbContext = new ApplicationDbContext();
 
         }
+      
 
         public ActionResult Index()
         {

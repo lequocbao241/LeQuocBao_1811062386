@@ -21,18 +21,7 @@ namespace LeQuocBao_1811062386.Controllers
         }
         // GET: Courses
 
-        public async Task<ActionResult> Index(string SearchString)
-        {
-            if (!String.IsNullOrEmpty(SearchString))
-            {
-                return View(await _dbContext.Categories.Where(m=>m.Name.Contains(SearchString)).ToListAsync());
-
-            }
-            else
-            {
-                return View(await _dbContext.Categories.ToListAsync());
-            }
-        }
+       
         [Authorize]
         public ActionResult Create()
         {

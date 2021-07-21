@@ -25,14 +25,16 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Add Course", "Create", "Courses")</li>
                     <li>
-                        <form class="timkiem">
-                            <div class="form-group form-inline">
-                                <input placeholder="Nhập từ khoá" type="text" name="searchkey" class="form-control form-inline"/>
-                                <input type="submit" name="submit" value="tìm kiếm" class="form-control"
+                        <form>
+                            <div class="form-group form-inline" >
+                                <input type="text" name="searchkey" class="form-control form-inline"/>
+                                <input type="submit" value="Tìm Kiếm " name="submit" class="form-control"/>
+
 
                             </div>
                         </form>
                     </li>
+                   
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
